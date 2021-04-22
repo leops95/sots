@@ -8,7 +8,7 @@ List of variables from `dataset_parsed.csv`:
 
 Variable | Definition
 -------|-----------
-`file_id` | Name of the text file in `speeches_raw/`
+`file_id` | Name of the text file from `speeches_raw/`
 `state_id` | U.S. State unique identifier (ISO 2-digit)
 `state_name` | U.S. State official name
 `year` | Year of elocution
@@ -19,4 +19,4 @@ Variable | Definition
 `text` | Parsed speech
 `source` | URL link of the speech
 
-The data collection steps, content and analysis will be soon provided on [my personal website](leopicard.net).
+The data collection steps, content and analysis will be soon provided on [my personal website](https://leopicard.net).

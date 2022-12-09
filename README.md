@@ -1,6 +1,6 @@
 # U.S. State of the State transcripts
 
-This repository contains a dataset of 1'198 speeches from U.S. politicians between 1995 and 2020. Raw text files and metadata are also provided.
+This repository contains a dataset of 1'198 speeches from U.S. politicians between 1995 and 2022. Raw text files and metadata are also provided.
 
 `speech_parser.py` contains the code to append all text files, merges it with `metadata.csv`, then stores the output in `dataset_parsed.csv`. As a preprocessing step, I only delete new lines `\n` and tabulations `\t`.
 
@@ -19,4 +19,4 @@ Variable | Definition
 `text` | Parsed speech
 `source` | URL link of the speech
 
-The data collection steps, content and analysis will be soon provided on [my personal website](https://leopicard.net).
+

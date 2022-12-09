@@ -11,7 +11,7 @@ import regex as re
 
 
 def clean_vars(path, text):
-    file_id_clean = re.findall(r'\w{2}\d{4}', path)
+    file_id_clean = re.findall(r'\w{2}\d{4}.txt', path)
     clean_text = re.sub(r'\n|\t', ' ', text)
     clean_text = re.sub(r'\s{2,}', ' ', clean_text)
     if clean_text[0] == ' ':
@@ -21,7 +21,7 @@ def clean_vars(path, text):
 
 
 if __name__ == '__main__':
-    os.chdir('/home/leops95/GitHub/sots/')
+    os.chdir('/home/picard0001/Switchdrive/Private/GitHub/sots/')
     
     metadata = pd.read_csv('metadata.csv')
     
@@ -39,8 +39,8 @@ if __name__ == '__main__':
     
     speeches['file_id'], speeches['text'] = zip(*speeches.apply(lambda x: clean_vars(x['file_id'], x['text']), axis = 1))
     
-    dataset = speeches.merge(metadata, on = 'file_id', how = 'left')
+    dataset = speeches.merge(metadata, on = 'file_id', how = 'outer')
     
-    dataset = dataset[['file_id', 'state_id', 'state_name', 'year', 'speaker', 'party', 'type', 'quality', 'text', 'source']].sort_values(by = 'file_id')
+    dataset = dataset[['file_id', 'state_id', 'state_name', 'year', 'speaker', 'party', 'type', 'quality', 'text', 'source', 'remarks']].sort_values(by = 'file_id')
     
     dataset.to_csv('dataset_parsed.csv', index = False)
